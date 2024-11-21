@@ -80,6 +80,7 @@ class AccessTokenGuard
 
         $token = null;
         $signature = null;
+        $access_key = is_array($access_key) ? $access_key[0] : $access_key;
         if (\strpos($access_key, ':') !== false) {
             [$access_key, $signature] = \explode(':', $access_key, 2);
         }
